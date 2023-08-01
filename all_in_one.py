@@ -291,7 +291,7 @@ lenoutputs = re.compile(
 
 if (len(lenoutputs) == 1):
     con_pole_length1 = float(lenoutputs[0])
-print(con_pole_length1)
+
 # print(parameters['pole_length'])
 if (len(lenoutputs) > 1):
     # print("len is > 1")
@@ -345,8 +345,6 @@ if (abs(con_pole_length1 - ocl_pole_length)/ocl_pole_length <= 0.05):
 
 
 # print((con_pole_length2 - ocl_pole_length)/ocl_pole_length)
-print(ocl_pole_length)
-print(con_pole_length2)
 
 if (abs(con_pole_length2 - ocl_pole_length)/ocl_pole_length <= 0.05):
     bool_for_length = True
