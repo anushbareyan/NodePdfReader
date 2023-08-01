@@ -286,16 +286,19 @@ print(parameters2)
 # print(re.compile(r"[345][05]").findall(parameters2))
 # print(re.compile(r"[12345h]").findall(parameters2))
 
-con_pole_length1 = float(re.compile(
-    r"[345][05]").findall(parameters['pole_length'][0])[0])
+lenoutputs = re.compile(
+    r"[345][05]").findall(parameters['pole_length'][0])
+
+if (len(lenoutputs) == 1):
+    con_pole_length1 = float(lenoutputs[0])
+print(con_pole_length1)
 # print(parameters['pole_length'])
-if (len(parameters['pole_length'][0]) > 1):
+if (len(lenoutputs) > 1):
     # print("len is > 1")
-    con_pole_length2 = float(re.compile(
-        r"[345][05]").findall(parameters['pole_length'][0])[1])
+    con_pole_length2 = float(lenoutputs[1])
 else:
     # print("len is <= 1")
-    con_pole_length2 = con_pole_length1
+    con_pole_length2 = float(con_pole_length1)
 
 con_pole_class = float(re.compile(
     r"[12345h]").findall(parameters['pole_class'][0])[-1])
@@ -342,6 +345,9 @@ if (abs(con_pole_length1 - ocl_pole_length)/ocl_pole_length <= 0.05):
 
 
 # print((con_pole_length2 - ocl_pole_length)/ocl_pole_length)
+print(ocl_pole_length)
+print(con_pole_length2)
+
 if (abs(con_pole_length2 - ocl_pole_length)/ocl_pole_length <= 0.05):
     bool_for_length = True
 
