@@ -289,7 +289,12 @@ print(parameters2)
 lenoutputs = re.compile(
     r"[345][05]").findall(parameters['pole_length'][0])
 
-if (len(lenoutputs) == 1):
+
+if (len(lenoutputs) == 0):
+    con_pole_length1 = 0
+    con_pole_length2 = 0
+
+if (len(lenoutputs) >= 1):
     con_pole_length1 = float(lenoutputs[0])
 
 # print(parameters['pole_length'])
