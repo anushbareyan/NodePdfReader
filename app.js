@@ -68,7 +68,7 @@ app.post(
     // Handle form submission and file uploads here
     // res.send(`Form submitted and files uploaded successfully: ${JSON.stringify(files)}`);
 
-    const childPy = spawn("python3", ["all_in_one.py"]);
+    const childPy = spawn("python3", ["all_in_one1.py"]);
 
     let stdoutData = "";
     let stderrData = "";
@@ -100,14 +100,14 @@ app.post(
           return;
         }
 
-        files.forEach((file) => {
-          const filePath = path.join(uploadsFolder, file);
-          fs.unlink(filePath, (err) => {
-            if (err) {
-              console.error(`Error deleting file ${file}:`, err);
-            }
-          });
-        });
+        // files.forEach((file) => {
+        //   const filePath = path.join(uploadsFolder, file);
+        //   fs.unlink(filePath, (err) => {
+        //     if (err) {
+        //       console.error(`Error deleting file ${file}:`, err);
+        //     }
+        //   });
+        // });
       });
     });
   }
