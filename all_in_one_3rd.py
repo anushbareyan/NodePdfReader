@@ -428,8 +428,7 @@ print(f"setting depth: Con and ocl {bool_for_depth_1_2}")
 print(f"pole length: Est and ocl { bool_for_length_2_3}")
 print(f"pole class: Est and ocl {bool_for_class_2_3}")
 
-print(bool_for_class_1_2 and bool_for_length_1_2 and
-      bool_for_depth_1_2 and bool_for_length_2_3 and bool_for_class_2_3)
+
 if (bool_for_class_1_2 and bool_for_length_1_2 and bool_for_depth_1_2 and bool_for_length_2_3 and bool_for_class_2_3):
     print("passed")
 else:
